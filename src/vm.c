@@ -1,5 +1,6 @@
-#include "../inc/common.h"
 #include <stdio.h>
+#include "../inc/common.h"
+#include "../inc/compiler.h"
 #include "../inc/debug.h"
 #include "../inc/vm.h"
 
@@ -87,8 +88,7 @@ static InterpretResult run() {
     #undef BINATY_OPP
 }
 
-InterpretResult interpret(Chunk *chunk) {
-    vm.chunk = chunk;
-    vm.ip = vm.chunk->code;
-    return run();
+InterpretResult interpret(const char* source) {
+    compile(source);
+    return INTERPRET_OK;
 }
