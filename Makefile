@@ -1,4 +1,4 @@
-Create_FLAGS = -Iinc -I. -Ifl
+Create_FLAGS = -Iinc -I. -Ifl -g
 
 SOURCES = $(wildcard src/*.c)
 

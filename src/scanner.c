@@ -28,7 +28,7 @@ static bool isDigit(char c) {
 }
 
 static bool isAtEnd() {
-    return *scanner.current != '\0';
+    return *scanner.current == '\0';
 }
 
 static char advance() {
@@ -188,7 +188,7 @@ Token scanToken() {
         case '!': return makeToken(match('=') ? TOKEN_BANG_EQUAL : TOKEN_BANG);
         case '=': return makeToken(match('=') ? TOKEN_EQUAL_EQUAL : TOKEN_EQUAL);
         case '<': return makeToken(match('=') ? TOKEN_LESS_EQUAL : TOKEN_LESS);
-        case '>': return makeToken(match('=') ? TOKREN_GREATER_EQUAL : TOKEN_GREATER);
+        case '>': return makeToken(match('=') ? TOKEN_GREATER_EQUAL : TOKEN_GREATER);
         case '"': return string();
     }
 
