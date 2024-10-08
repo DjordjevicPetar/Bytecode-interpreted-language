@@ -3,5 +3,7 @@ var b = 11;
 print b - a;
 {
     var a = 5;
-    print b - a;
+    for(var c = b - a; c > 0; c = c - 1){
+        print c;
+    }
 }
