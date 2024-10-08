@@ -1,1 +1,7 @@
-"st" + "ri" + "ng"
+var a = 4 * 2 + 5;
+var b = 11;
+print b - a;
+{
+    var a = 5;
+    print b - a;
+}
