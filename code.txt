@@ -1,9 +1,15 @@
-var a = 4 * 2 + 5;
-var b = 11;
-print b - a;
-{
-    var a = 5;
-    for(var c = b - a; c > 0; c = c - 1){
-        print c;
+fun fib(n) {
+    if(n < 2) return n;
+    var a = 1;
+    var b = 0;
+    for(var i = 1; i < n; i = i + 1) {
+        var temp = b;
+        b = a;
+        a = b + temp;
     }
+    return a;
 }
+
+var start = clock();
+print fib(10);
+print clock() - start;
