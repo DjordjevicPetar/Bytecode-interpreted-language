@@ -1,15 +1,15 @@
-fun fib(n) {
-    if(n < 2) return n;
-    var a = 1;
-    var b = 0;
-    for(var i = 1; i < n; i = i + 1) {
-        var temp = b;
-        b = a;
-        a = b + temp;
+fun outer(a) {
+    var b = 2;
+    fun middle(c) {
+        var d = 4;
+        fun inner(e) {
+            print a + b + c + d + e;
+        }
+        return inner;
     }
-    return a;
+    return middle;
 }
 
-var start = clock();
-print fib(10);
-print clock() - start;
+var a = outer(10);
+var b = a(11);
+b(12);
