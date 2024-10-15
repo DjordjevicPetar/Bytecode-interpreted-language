@@ -1,8 +1,22 @@
-class Pair {
-    
+class Complex {
+    init(real, imag){
+        this.real = real;
+        this.imag = imag;
+    }
+
+    write(){
+        print this.real;
+        print " ";
+        print this.imag;
+    }
+
+    add(otherComplex){
+        this.real = this.real + otherComplex.real;
+        this.imag = this.imag + otherComplex.imag;
+    }
 }
 
-var pair = Pair();
-pair.first = 1;
-pair.second = 2;
-print pair.first + pair.second;
+var first = Complex(5, 4);
+var second = Complex(6, 7);
+first.add(second);
+first.write();
